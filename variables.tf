@@ -1,12 +1,12 @@
 variable "allow_all" {
    type = string
-   default = "sg-06b1b57b365846051"
+   default = "sg-09c7c70bd56f0d58b"
 }
 variable "zone_id" {
-    default = "Z07733871EF9XTU0JSZGP"
+    default = "Z01686671NYDIP6ZJB3D7"
 }
 variable "domain_name" {
-  default = "lingaiah.online"
+  default = "lithesh.shop"
 }
 
 variable "frontend_instance" {

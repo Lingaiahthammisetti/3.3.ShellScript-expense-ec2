@@ -2,6 +2,14 @@ resource "aws_instance" "expense_frontend" {
     ami           = data.aws_ami.rhel_info.id
     instance_type = var.frontend_instance.instance_type
     vpc_security_group_ids = [var.allow_all]
+    root_block_device {
+        encrypted             = false
+        volume_type           = "gp3"
+        volume_size           = 50
+        iops                  = 3000
+        throughput            = 125
+        delete_on_termination = true
+    }
     tags = {
         Name = "frontend"
     }
@@ -19,6 +27,14 @@ resource "aws_instance" "expense_backend" {
     ami           = data.aws_ami.rhel_info.id
     instance_type = var.backend_instance.instance_type
     vpc_security_group_ids = [var.allow_all]
+    root_block_device {
+        encrypted             = false
+        volume_type           = "gp3"
+        volume_size           = 50
+        iops                  = 3000
+        throughput            = 125
+        delete_on_termination = true
+    }
     tags = {
         Name = "backend"
     }
@@ -36,6 +52,14 @@ resource "aws_instance" "expense_mysql" {
     ami           = data.aws_ami.rhel_info.id
     instance_type = var.mysql_instance.instance_type
     vpc_security_group_ids = [var.allow_all]
+    root_block_device {
+        encrypted             = false
+        volume_type           = "gp3"
+        volume_size           = 50
+        iops                  = 3000
+        throughput            = 125
+        delete_on_termination = true
+    }
     tags = {
         Name = "mysql"
     }
